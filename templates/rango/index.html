@@ -18,5 +18,12 @@
             <strong>There are no categories present.</strong>
        {% endif %}
 
+       <h2>Top 5 pages</h2>
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{page.title}}</a><span>({{ page.views }})</span></li>
+                {% endfor %}
+            </ul>
+
     </body>
 </html>
