@@ -81,7 +81,13 @@ def category(request, category_name_slug):
 
 
 def about(request):
-    return HttpResponse("Here is the about page. <br/> <a href='/rango/'>Index</a>")
+    if request.session.get('visits'):
+        count = request.session.get('visits')
+    else:
+        count = 0
+
+    # remember to include the visit data
+    return render(request, 'rango/about.html', {'visits': count})
 
 
 def add_category(request):
