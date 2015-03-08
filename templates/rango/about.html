@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About Rango</title>
-</head>
-<body>
-    <h2>Rango</h2>
-    <p>A Django application that let's users specify categories and access links to various web pages.</p>
-    <p>Total no of visits : {{visits}}</p>
-</body>
-</html>
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+    <div class="page-header">
+                <h1>About</h1>
+            </div>
+            <p>Rango is a website made with Django.</p>
+{% endblock %}
